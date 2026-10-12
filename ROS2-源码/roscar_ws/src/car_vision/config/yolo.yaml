@@ -1,0 +1,13 @@
+yolo_detect:
+  ros__parameters:
+    image_topic: /image_raw
+    backend: auto
+    model_path: ""
+    rknn_path: ""
+    imgsz: 320
+    conf: 0.45
+    iou: 0.45
+    use_coco_names: true
+    class_names: ["person", "bottle", "ball", "stop_sign", "traffic_light", "obstacle"]
+    stop_classes: ["stop sign", "stop_sign"]
+    react_enable: false

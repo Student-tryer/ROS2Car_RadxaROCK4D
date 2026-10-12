@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="header">
+    <view class="dot {{connected ? 'ok' : 'bad'}}"></view>
+    <text class="conn-text">{{statusText}}</text>
+  </view>
+
+  <view class="panel" wx:if="{{!connected}}">
+    <view class="row">
+      <text class="lbl">Rock4 地址</text>
+      <input class="ipt" value="{{host}}" bindinput="onHostInput" placeholder="192.168.1.100" placeholder-class="ph"/>
+    </view>
+    <view class="row">
+      <text class="lbl">端口</text>
+      <input class="ipt" type="number" value="{{port}}" bindinput="onPortInput"/>
+    </view>
+    <button class="btn go" bindtap="connect">连接 Rock4</button>
+    <text class="hint">手机与 Rock4 需在同一局域网，Rock4 上运行 server/mock_rock4d.py</text>
+  </view>
+
+  <block wx:else>
+    <view class="stage">
+      <canvas type="2d" id="car" class="car-canvas"></canvas>
+      <view class="angle-badge">{{yawText}}°</view>
+    </view>
+
+    <view class="stats">
+      <view class="stat">
+        <text class="stat-label">速度</text>
+        <text class="stat-val">{{speedText}} m/s</text>
+      </view>
+      <view class="stat">
+        <text class="stat-label">转向角</text>
+        <text class="stat-val">{{angleText}}°</text>
+      </view>
+      <view class="stat">
+        <text class="stat-label">电池</text>
+        <text class="stat-val" style="color:{{batteryColor}}">{{percentText}}%</text>
+        <text class="stat-sub">{{voltText}}V</text>
+      </view>
+    </view>
+
+    <view class="ctrl">
+      <view class="row">
+        <text class="lbl">数据频率</text>
+        <text class="freq-val">{{freqText}}</text>
+      </view>
+      <slider min="1" max="200" step="1" value="{{freq}}"
+              bindchanging="onFreqChanging" bindchange="onFreqChange"
+              activeColor="#4c8dff" backgroundColor="#2a3150" block-color="#dfe4f5"/>
+      <button class="btn {{streaming ? 'stop' : 'go'}}" bindtap="onStreamToggle">
+        {{streaming ? '停止数据流' : '开始数据流'}}
+      </button>
+      <button class="btn ghost" bindtap="disconnect">断开连接</button>
+    </view>
+  </block>
+</view>

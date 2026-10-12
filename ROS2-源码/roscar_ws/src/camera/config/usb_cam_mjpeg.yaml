@@ -1,0 +1,9 @@
+usb_cam_node:
+  ros__parameters:
+    video_device: /dev/video1
+    frame_id: camera_optical_frame
+    image_width: 640
+    image_height: 480
+    framerate: 15.0
+    pixel_format: mjpeg2rgb
+    camera_name: roscar_cam

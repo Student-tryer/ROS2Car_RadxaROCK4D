@@ -1,0 +1,10 @@
+path: /home/root/datasets/roscar
+train: images/train
+val: images/val
+names:
+  0: person
+  1: bottle
+  2: ball
+  3: stop_sign
+  4: traffic_light
+  5: obstacle

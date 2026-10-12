@@ -1,0 +1,83 @@
+.page {
+  height: 100vh;
+  padding: 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+.dot { width: 18rpx; height: 18rpx; border-radius: 50%; margin-right: 12rpx; }
+.dot.ok { background: #3ddc84; box-shadow: 0 0 12rpx #3ddc84; }
+.dot.bad { background: #ff5c5c; }
+.conn-text { font-size: 26rpx; color: #9aa3c4; }
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.row { display: flex; align-items: center; justify-content: space-between; margin: 14rpx 0; }
+.lbl { font-size: 28rpx; color: #9aa3c4; }
+.ipt {
+  width: 62%;
+  background: #161b31;
+  border: 1rpx solid #2a3150;
+  border-radius: 12rpx;
+  padding: 14rpx 20rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.ph { color: #4a5277; }
+.hint { font-size: 22rpx; color: #6b7399; margin-top: 24rpx; text-align: center; }
+
+.btn {
+  margin-top: 20rpx;
+  background: #2a3150;
+  color: #dfe4f5;
+  border-radius: 14rpx;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.btn.go { background: #3ddc84; color: #04120a; }
+.btn.stop { background: #ff5c5c; color: #fff; }
+.btn.ghost { background: transparent; border: 1rpx solid #2a3150; color: #9aa3c4; }
+
+.stage { position: relative; flex: 1; min-height: 0; }
+.car-canvas { width: 100%; height: 100%; }
+.angle-badge {
+  position: absolute;
+  top: 10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(22, 27, 49, 0.85);
+  border-radius: 22rpx;
+  padding: 4rpx 26rpx;
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #4c8dff;
+}
+
+.stats { display: flex; margin: 18rpx 0; }
+.stat {
+  flex: 1;
+  background: #161b31;
+  border: 1rpx solid #2a3150;
+  border-radius: 14rpx;
+  padding: 16rpx 8rpx;
+  text-align: center;
+  margin-right: 14rpx;
+}
+.stat:last-child { margin-right: 0; }
+.stat-label { display: block; font-size: 22rpx; color: #6b7399; }
+.stat-val { display: block; font-size: 36rpx; font-weight: 600; margin-top: 6rpx; }
+.stat-sub { display: block; font-size: 20rpx; color: #6b7399; margin-top: 2rpx; }
+
+.ctrl { padding-bottom: 20rpx; }
+.freq-val { font-size: 30rpx; color: #4c8dff; font-weight: 600; }

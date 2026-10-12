@@ -1,0 +1,12 @@
+line_follow:
+  ros__parameters:
+    image_topic: /image_raw
+    line_color: black
+    thresh: 60
+    roi_top: 0.55
+    min_area: 400
+    follow_enable: false
+    linear_speed: 0.10
+    max_angular: 0.8
+    kp_angular: 1.1
+    search_angular: 0.25

@@ -1,0 +1,9 @@
+color_detect:
+  ros__parameters:
+    image_topic: /image_raw
+    target_color: red
+    min_area: 800
+    follow_enable: false
+    linear_speed: 0.12
+    max_angular: 0.7
+    kp_angular: 0.8

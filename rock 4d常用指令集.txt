@@ -1,0 +1,2 @@
+1、cd到雷达启动目录：cd ~/roscar_ws/src/ydlidar_ros2_driver-master/launch
+2、ubuntu_ros2 root密码：root

@@ -1,0 +1,22 @@
+import os
+
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
+
+
+def generate_launch_description():
+    pkg = lambda name: get_package_share_directory(name)
+    return LaunchDescription([
+        DeclareLaunchArgument('mode', default_value='color'),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(pkg('car_launch'), 'launch', 'robot.launch.py')),
+            launch_arguments={'with_camera': 'true', 'with_slam': 'false'}.items(),
+        ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(pkg('car_vision'), 'launch', 'vision.launch.py')),
+            launch_arguments={'mode': LaunchConfiguration('mode')}.items(),
+        ),
+    ])
